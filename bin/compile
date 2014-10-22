@@ -44,6 +44,7 @@ commands_to_run=(
   app_dependencies
   copy_hex
   compile_app
+  install_goon
   backup_app
   backup_mix
   write_profile_d_script
