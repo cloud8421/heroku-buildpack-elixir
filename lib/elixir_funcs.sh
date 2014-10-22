@@ -36,6 +36,17 @@ function install_elixir() {
   export LC_CTYPE=en_US.utf8
 }
 
+function install_goon() {
+  output_section "Installing Goon"
+
+  mkdir -p $(goon_path)
+  cd $(goon_path)
+
+  curl 2>/dev/null -L https://github.com/alco/goon/releases/download/v1.1.1/goon_linux_amd64.tar.gz | tar zx > goon
+  rm goon_linux_amd64_fixed.zip
+
+  cd - > /dev/null
+}
 
 function fix_elixir_version() {
   if [ ${#elixir_version[@]} -eq 2 ] && [ ${elixir_version[0]} = "branch" ]; then

@@ -39,12 +39,12 @@ commands_to_run=(
   restore_mix
   install_hex
   install_rebar
+  install_goon
 
   restore_app
   app_dependencies
   copy_hex
   compile_app
-  install_goon
   backup_app
   backup_mix
   write_profile_d_script

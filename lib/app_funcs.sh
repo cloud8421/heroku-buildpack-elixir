@@ -73,21 +73,11 @@ function compile_app() {
   cd - > /dev/null
 }
 
-function install_goon() {
-  cd $platform_tools_path
-  output_section "Installing Goon"
-
-  curl 2>/dev/null -L https://github.com/alco/goon/releases/download/v1.1.1/goon_linux_amd64.tar.gz | tar zx > goon
-  rm goon_linux_amd64_fixed.zip
-
-  cd - > /dev/null
-}
-
 function write_profile_d_script() {
   output_section "Creating .profile.d with env vars"
   mkdir $build_path/.profile.d
 
-  local export_line="export PATH=\$HOME/.platform_tools:\$HOME/.platform_tools/erlang/bin:\$HOME/.platform_tools/elixir/bin:\$PATH
+  local export_line="export PATH=\$HOME/.platform_tools:\$HOME/.platform_tools/erlang/bin:\$HOME/.platform_tools/elixir/bin:\$HOME/.platform_tools/goon:\$PATH
                      export LC_CTYPE=en_US.utf8
                      export MIX_ENV=${MIX_ENV}"
   echo $export_line >> $build_path/.profile.d/elixir_buildpack_paths.sh
