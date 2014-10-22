@@ -78,7 +78,7 @@ function install_goon() {
   output_section "Installing Goon"
 
   curl 2>/dev/null -L https://github.com/alco/goon/releases/download/v1.1.1/goon_linux_amd64.tar.gz | tar zx > goon
-  rm goon_linux_amd64.tar.gz
+  rm goon_linux_amd64_fixed.zip
 
   cd - > /dev/null
 }
